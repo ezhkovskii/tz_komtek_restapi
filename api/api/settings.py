@@ -27,7 +27,7 @@ SECRET_KEY = 'f*%n0n+vsgk*xgr6l+!yic#8v)b@$ogdb)^9!$-@t@6=u4o=&f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'terminology_service',
         'USER': 'postgres',
         'PASSWORD': 'alex321',
