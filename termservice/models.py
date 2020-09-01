@@ -61,7 +61,7 @@ class ItemDirectory(models.Model):
 
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=['code', 'version'], name='unique_code_version')
+            models.UniqueConstraint(fields=['code', 'version', 'dir'], name='unique_code_version')
         ]
         verbose_name = 'Элемент справочника'
         verbose_name_plural = 'Элементы справочников'
