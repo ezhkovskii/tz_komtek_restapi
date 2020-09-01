@@ -8,7 +8,7 @@ class Directory(models.Model):
     short_name = models.CharField(verbose_name = 'Короткое наименование', max_length=100)
     description = models.TextField(verbose_name = 'Описание')
     version = models.CharField(verbose_name = 'Версия справочника', max_length=20)
-    start_date = models.DateTimeField(auto_now=True, verbose_name = 'Дата начала действия справочника текущей версии')
+    start_date = models.DateTimeField(verbose_name = 'Дата начала действия справочника текущей версии')
 
     __current_version = None
 
@@ -73,7 +73,7 @@ class ItemDirectory(models.Model):
 class DirectoryVersion(models.Model):
     dir = models.ForeignKey(Directory, verbose_name ='Справочник', on_delete=models.CASCADE)
     version = models.CharField(verbose_name='Версия справочника', max_length=20)
-    start_date = models.DateTimeField(auto_now=True, verbose_name='Дата начала действия версии справочника')
+    start_date = models.DateTimeField(verbose_name='Дата начала действия версии справочника')
 
     def __str__(self):
         return str(self.dir)
